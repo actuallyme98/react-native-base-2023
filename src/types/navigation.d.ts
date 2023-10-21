@@ -1,4 +1,4 @@
-type UnAuthedDrawerParamList = {
+type UnAuthedStackParamList = {
   Login: undefined;
   Register: undefined;
 };
@@ -10,5 +10,9 @@ type AuthedDrawerParamList = {
 
 type HomeStackParamList = {
   Dashboard: undefined;
-  Setting: undefined;
+  Settings: undefined;
+};
+
+type SettingStackParamList = {
+  SettingList: undefined;
 };

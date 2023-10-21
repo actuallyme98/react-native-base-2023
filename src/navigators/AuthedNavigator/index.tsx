@@ -9,8 +9,9 @@ import {makeStyles} from '@utils/style.util';
 
 import DrawerContent from './Drawer';
 import HomeNavigator from './HomeNavigator';
+import SettingNavigator from './SettingsNavigator';
 
-import {MENU_WALLET_ICON} from '@assets/index';
+import {MENU_WALLET_ICON, MENU_ACCOUNT_ICON} from '@assets/index';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,6 +24,10 @@ const AuthedNavigator = () => {
   );
   const HomeDrawerIcon = useCallback(
     () => <Image style={styles.menuIcon} source={MENU_WALLET_ICON} />,
+    [styles.menuIcon],
+  );
+  const SettingDrawerIcon = useCallback(
+    () => <Image style={styles.menuIcon} source={MENU_ACCOUNT_ICON} />,
     [styles.menuIcon],
   );
 
@@ -40,6 +45,14 @@ const AuthedNavigator = () => {
         options={{
           headerShown: false,
           drawerIcon: HomeDrawerIcon,
+        }}
+      />
+      <Drawer.Screen<keyof AuthedDrawerParamList>
+        name={'Settings'}
+        component={SettingNavigator}
+        options={{
+          headerShown: false,
+          drawerIcon: SettingDrawerIcon,
         }}
       />
     </Drawer.Navigator>

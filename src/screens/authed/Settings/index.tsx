@@ -5,10 +5,10 @@ import {StyledComponentProps, makeStyles} from '@utils/style.util';
 
 type Props = {} & StyledComponentProps<typeof useStyles>;
 
-const Setting: React.FC<Props> = () => {
+const Settings: React.FC<Props> = () => {
   return <View />;
 };
 
-export default Setting;
+export default Settings;
 
 const useStyles = makeStyles({});
